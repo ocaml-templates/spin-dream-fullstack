@@ -1,0 +1,23 @@
+(rule
+ (targets layout_template.ml)
+ (deps layout_template.eml.ml)
+ (action
+  (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
+
+(rule
+ (targets index_template.ml)
+ (deps index_template.eml.ml)
+ (action
+  (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
+
+(rule
+ (targets fallback_template.ml)
+ (deps fallback_template.eml.ml)
+ (action
+  (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
+
+(rule
+ (targets app_template.ml)
+ (deps app_template.eml.ml)
+ (action
+  (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))

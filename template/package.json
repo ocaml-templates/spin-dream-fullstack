@@ -1,0 +1,14 @@
+{
+  "name": "{{ project_slug }}",
+  "version": "1.0.0",
+  "description": "{{ project_description }}",
+  "author": "{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "tailwindcss": "^2.1.1"
+  }
+}

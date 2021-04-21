@@ -1,0 +1,6 @@
+(library
+ (name {{ project_snake }}_app)
+ (libraries js_of_ocaml)
+ (modes byte)
+ (preprocess
+  (pps js_of_ocaml-ppx)))
