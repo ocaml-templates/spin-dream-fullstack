@@ -9,9 +9,10 @@ all:
 
 .PHONY: deps
 deps: ## Install development dependencies
-	opam pin -n -y git@github.com:ocaml/ocaml-lsp.git
 	opam pin -n -y git@github.com:aantron/dream.git
-	opam install -y dune-release merlin ocamlformat utop ocaml-lsp-server
+	opam pin -n -y git@github.com:tmattio/dream-cli.git
+	opam pin -n -y git@github.com:tmattio/dream-livereload.git
+	opam install -y dune-release ocamlformat utop ocaml-lsp-server
 	npm install
 	opam install --deps-only --with-test --with-doc -y .
 
@@ -36,7 +37,7 @@ install: all ## Install the packages on the system
 
 .PHONY: start
 start: all ## Run the produced executable
-	opam exec -- dune exec --root . bin/server.exe $(ARGS)
+	opam exec -- dune exec --root . bin/server.exe run $(ARGS)
 
 .PHONY: test
 test: ## Run the unit tests

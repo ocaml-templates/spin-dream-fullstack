@@ -1,4 +1,5 @@
 (name dream)
+
 (description "Dream web application")
 
 (config project_name
@@ -28,8 +29,7 @@
   (input (prompt "Name of the author")))
 
 (config github_username
-  (input (prompt "Github username"))
-  (default :username))
+  (input (prompt "Github username")))
 
 (config ci_cd
   (select
@@ -52,7 +52,7 @@
     (run make create_switch)
     (run make deps)
     (run make build)
-    (run make lock))
+    (run chmod +x script/watch.sh))
   (message "🎁  Installing packages in a switch. This might take a couple minutes.")
   (enabled_if (eq :create_switch true)))
 
@@ -60,7 +60,7 @@
   (actions
     (run make deps)
     (run make build)
-    (run make lock))
+    (run chmod +x script/watch.sh))
   (message "🎁  Installing packages globally. This might take a couple minutes.")
   (enabled_if (eq :create_switch false)))
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source_dirs="lib bin asset config"
-args=${*:-"bin/server.exe"}
+args=${*:-"bin/server.exe run"}
 cmd="dune exec ${args}"
 
 function sigint_handler() {

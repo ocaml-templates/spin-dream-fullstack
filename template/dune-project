@@ -25,6 +25,8 @@
   dune
   crunch
   dream
+  dream-cli
+  dream-livereload
   js_of_ocaml
   js_of_ocaml-ppx
   (alcotest :with-test)

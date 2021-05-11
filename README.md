@@ -16,8 +16,9 @@ spin new https://github.com/tmattio/spin-dream.git
 - [X] TailwindCSS integrated with Dune
 - [X] Inter fonts configured
 - [X] Unit tests suite
-- [X] Script to build and restart in watch mode
+- [X] Live reloading on file system change
 - [X] Turbolink setup
+- [X] CLI to configure server settings at runtime
 
 ## To Do
 
@@ -26,9 +27,10 @@ spin new https://github.com/tmattio/spin-dream.git
 - [ ] Make the JS app optional
 - [ ] Make Turbolink optional
 - [ ] Make TailwindCSS and Inter fonts optional
+- [ ] Make the Docker setup optional
 
 ## Acknowledgments
 
 - Welcome page design borrowed from TailwindCSS playground
 - Turbolink setup borrowed from Haskell's IHP
-- Directory heavily inspired by Elixir's Phoenix
+- Directory structure heavily inspired by Elixir's Phoenix
