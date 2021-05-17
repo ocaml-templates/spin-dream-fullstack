@@ -2,7 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
-  purge: ["lib/{{ project_snake }}_web/templates/*.eml.ml"],
+  purge: ["**/*.eml"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
