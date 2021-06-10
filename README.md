@@ -24,10 +24,6 @@ spin new https://github.com/tmattio/spin-dream.git
 
 - [ ] Add Caqti examples
 - [ ] Skip crunch in development
-- [ ] Make the JS app optional
-- [ ] Make Turbolink optional
-- [ ] Make TailwindCSS and Inter fonts optional
-- [ ] Make the Docker setup optional
 
 ## Acknowledgments
 

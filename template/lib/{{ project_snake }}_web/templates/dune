@@ -10,8 +10,10 @@
  (action
   (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
 
+{% if include_embedded_js == "true" %}
 (rule
  (targets app_template.ml)
  (deps app_template.eml)
  (action
   (run %{bin:dream_eml} %{deps} --workspace %{workspace_root})))
+{% endif %}

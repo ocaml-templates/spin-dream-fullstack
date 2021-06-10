@@ -1,7 +1,8 @@
+{% if include_tailwind == "true" %}
 (rule
  (target main.css)
  (deps
-  (:data ../config/tailwind.config.js)
+  (:data ../tailwind.config.js)
   (source_tree ../node_modules)
   (source_tree ../lib/{{ project_snake }}_web/templates)
   (env_var NODE_ENV))
@@ -12,7 +13,8 @@
    ; because dune won't include node_modules/.bin in the build, no matter
    ; what I do.
    (run node node_modules/tailwindcss/lib/cli.js build -c
-     config/tailwind.config.js -o %{target}))))
+    tailwind.config.js -o %{target}))))
+{% endif %}
 
 (rule
  (target app.js)

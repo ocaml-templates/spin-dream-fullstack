@@ -1,1 +1,7 @@
 lib/{{ project_snake }}_web/templates/*.eml
+{% if include_tailwind == "true" %}
+node_modules/*
+node_modules/*/*
+node_modules/*/*/*
+node_modules/*/*/*/*
+{% endif %}

@@ -31,11 +31,48 @@
 (config github_username
   (input (prompt "Github username")))
 
+(config include_docker
+  (confirm (prompt "Include Docker setup?"))
+  (default false))
+
+(config include_tailwind
+  (confirm (prompt "Include TailwindCSS?"))
+  (default false))
+
+(config include_embedded_js
+  (confirm (prompt "Include embedded JavaScript application?"))
+  (default false))
+
+(config include_turbolink
+  (confirm (prompt "Include Turbolink?"))
+  (default false))
+
 (config ci_cd
   (select
     (prompt "Which CI/CD do you use?")
     (values Github None))
   (default Github))
+
+(ignore
+  (files Dockerfile docker-compose.yml .dockerignore)
+  (enabled_if (eq :include_docker false)))
+
+(ignore
+  (files asset/helpers.js asset/vendor/*)
+  (enabled_if (eq :include_turbolink false)))
+
+(ignore
+  (files asset/main.css)
+  (enabled_if (eq :include_tailwind true)))
+
+
+(ignore
+  (files tailwind.config.js package.json)
+  (enabled_if (eq :include_tailwind false)))
+
+(ignore
+  (files bin/app.ml bin/app.mli lib/*/templates/app_template.eml lib/*_app/*)
+  (enabled_if (eq :include_embedded_js false)))
 
 (ignore
   (files github/*)

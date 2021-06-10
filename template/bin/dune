@@ -3,6 +3,7 @@
  (modules server)
  (libraries {{ project_snake }}_web))
 
+{% if include_embedded_js == "true" %}
 (executable
  (name app)
  (modules app)
@@ -10,3 +11,4 @@
   (:standard -no-check-prims))
  (modes js)
  (libraries {{ project_snake }}_app))
+{% endif %}

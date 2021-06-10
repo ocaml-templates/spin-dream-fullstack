@@ -15,8 +15,10 @@ depends: [
   "dream"
   "dream-cli"
   "dream-livereload"
+  {% if include_embedded_js == "true" %}
   "js_of_ocaml"
   "js_of_ocaml-ppx"
+  {% endif %}
   "alcotest" {with-test}
   "odoc" {with-doc}
 ]

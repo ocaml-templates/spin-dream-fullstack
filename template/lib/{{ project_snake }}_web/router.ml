@@ -7,7 +7,9 @@ let loader _root path _request =
 
 let routes =
   [ Dream.get "/" Page_handler.index
+  {% if include_embedded_js == "true" %}
   ; Dream.get "/app" Page_handler.app
+  {% endif %}
   ; Dream.get "/assets/**" (Dream.static ~loader "")
   ]
 

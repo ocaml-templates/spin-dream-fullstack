@@ -6,12 +6,16 @@ let render ~title inner =
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <link rel="icon" type="image/png" href="/assets/favicon.ico" />
       <link rel="stylesheet" href="/assets/main.css" />
+      {% if include_tailwind == "true" %}
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      {% endif %}
+      {% if include_turbolink == "true" %}
       <script defer type="text/javascript" src="/assets/helpers.js"></script>
       <script defer type="text/javascript" src="/assets/vendor/turbolinks.js"></script>
       <script defer type="text/javascript" src="/assets/vendor/morphdom-umd.min.js"></script>
       <script defer type="text/javascript" src="/assets/vendor/turbolinksMorphdom.js"></script>
       <script defer type="text/javascript" src="/assets/vendor/turbolinksInstantClick.js"></script>
+      {% endif %}
       <title><%s title %></title>
     </head>
 

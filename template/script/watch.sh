@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source_dirs="lib bin asset config"
+source_dirs="lib bin asset"
 args=${*:-"bin/server.exe run"}
 cmd="dune exec ${args}"
 
