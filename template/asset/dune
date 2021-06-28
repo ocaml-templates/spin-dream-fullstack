@@ -4,7 +4,7 @@
  (deps
   (:data ../tailwind.config.js)
   (source_tree ../node_modules)
-  (source_tree ../lib/{{ project_snake }}_web/templates)
+  (source_tree ../lib/ocamlorg_web/templates)
   (env_var NODE_ENV))
  (action
   (chdir
@@ -12,13 +12,21 @@
    ; We use node_modules/tailwindcss/lib/cli.js instead of `npx tailwindcss`
    ; because dune won't include node_modules/.bin in the build, no matter
    ; what I do.
-   (run node node_modules/tailwindcss/lib/cli.js build -c
-    tailwind.config.js -o %{target}))))
+   (run
+    node
+    node_modules/tailwindcss/lib/cli.js
+    build
+    -c
+    tailwind.config.js
+    -o
+    %{target}))))
 {% endif %}
 
+{% if include_embedded_js == "true" %}
 (rule
  (target app.js)
  (deps
   (:data ../bin/app.bc.js))
  (action
   (run cp ../bin/app.bc.js app.js)))
+{% endif %}

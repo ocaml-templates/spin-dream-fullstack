@@ -6,7 +6,9 @@
  (targets asset.ml)
  (deps
   ../../asset/main.css
+  {% if include_embedded_js == "true" %}
   ../../asset/app.js
+  {% endif %}
   (source_tree ../../asset))
  (action
   (with-stdout-to
