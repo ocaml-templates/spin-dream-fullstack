@@ -3,11 +3,12 @@
 Spin template for [Dream](https://github.com/aantron/dream) application
 
 ```bash
-spin new https://github.com/tmattio/spin-dream.git
+opam spin new https://github.com/tmattio/spin-dream.git
 ```
 
 ## What's included
 
+- [X] Live reloading on file system change
 - [X] A project structure with a clear separation of concerns
   - `lib/<project>` contains the business logic and storage access
   - `lib/<project>_web` contains the API definition
@@ -16,7 +17,6 @@ spin new https://github.com/tmattio/spin-dream.git
 - [X] TailwindCSS integrated with Dune
 - [X] Inter fonts configured
 - [X] Unit tests suite
-- [X] Live reloading on file system change
 - [X] Turbolink setup
 - [X] CLI to configure server settings at runtime
 
