@@ -3,10 +3,10 @@
 (description "Dream web application")
 
 (config project_name
-  (input (prompt "Project name")))
+  (input (prompt "Project name:")))
 
 (config project_slug
-  (input (prompt "Project slug"))
+  (input (prompt "Project slug:"))
   (default (slugify :project_name))
   (rules
     ("The project slug must be lowercase and contain ASCII characters and '-' only."
@@ -19,17 +19,17 @@
   (default true))
 
 (config project_description
-  (input (prompt "Description"))
+  (input (prompt "Description:"))
   (default "A short, but powerful statement about your project")
   (rules
-    ("The last character of the description cannot be a \".\" to comply with Opam"
+    ("The last character of the description cannot be a \".\" to comply with opam"
       (neq . (last_char :project_description)))))
 
 (config author_name
-  (input (prompt "Name of the author")))
+  (input (prompt "Name of the author:")))
 
 (config github_username
-  (input (prompt "GitHub username")))
+  (input (prompt "GitHub username:")))
 
 (config include_docker
   (confirm (prompt "Include Docker setup?"))
