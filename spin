@@ -29,7 +29,7 @@
   (input (prompt "Name of the author")))
 
 (config github_username
-  (input (prompt "Github username")))
+  (input (prompt "GitHub username")))
 
 (config include_docker
   (confirm (prompt "Include Docker setup?"))
@@ -50,8 +50,8 @@
 (config ci_cd
   (select
     (prompt "Which CI/CD do you use?")
-    (values Github None))
-  (default Github))
+    (values GitHub None))
+  (default GitHub))
 
 (ignore
   (files Dockerfile docker-compose.yml .dockerignore)
@@ -76,13 +76,13 @@
 
 (ignore
   (files github/*)
-  (enabled_if (neq :ci_cd Github)))
+  (enabled_if (neq :ci_cd GitHub)))
 
 ; We need to do this because Dune won't copy .github during build
 (post_gen
   (actions
     (run mv github .github))
-  (enabled_if (eq :ci_cd Github)))
+  (enabled_if (eq :ci_cd GitHub)))
 
 (post_gen
   (actions
