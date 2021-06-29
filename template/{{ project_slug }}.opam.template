@@ -1,0 +1,4 @@
+pin-depends: [
+  ["dream-livereload.0.1.0" "https://github.com/tmattio/dream-livereload.git"]
+  ["dream-cli.0.1.0" "https://github.com/tmattio/dream-cli.git"]
+]
