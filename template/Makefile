@@ -34,7 +34,7 @@ install: all ## Install the packages on the system
 
 .PHONY: start
 start: all ## Run the produced executable
-	opam exec -- dune exec --root . bin/server.exe run $(ARGS)
+	opam exec -- dune exec --root . bin/server.exe $(ARGS)
 
 .PHONY: test
 test: ## Run the unit tests
