@@ -4,6 +4,8 @@ source_dirs="lib bin asset"
 args=${*:-"bin/server.exe run"}
 cmd="dune exec ${args}"
 
+which fswatch || (echo "you need fswatch to run in watch mode"; exit 1)
+
 function sigint_handler() {
   kill "$(jobs -pr)"
   exit 1
