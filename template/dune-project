@@ -7,7 +7,7 @@
 {% if github_username %}(source
  (github {{ github_username }}/{{ project_slug }})){% endif %}
 
-(license MIT)
+(license ISC)
 
 (authors
   "{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}")
