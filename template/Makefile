@@ -10,7 +10,9 @@ all:
 .PHONY: deps
 deps: ## Install development dependencies
 	opam install -y dune-release ocamlformat utop ocaml-lsp-server
+	{% if include_tailwind == "true" %}
 	npm install
+	{% endif -%}
 	opam install --deps-only --with-test --with-doc -y .
 
 .PHONY: create_switch
