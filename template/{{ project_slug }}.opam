@@ -5,9 +5,10 @@ description: "{{ project_description }}"
 maintainer: ["{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}"]
 authors: ["{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}"]
 license: "MIT"
+{%- if github_username %}
 homepage: "https://github.com/{{ github_username }}/{{ project_slug }}"
-doc: "https://{{ github_username }}.github.io/{{ project_slug }}/"
-bug-reports: "https://github.com/{{ github_username }}/{{ project_slug }}/issues"
+doc: "https://{{ github_username }}.github.io/{{ project_slug }}"
+bug-reports: "https://github.com/{{ github_username }}/{{ project_slug }}/issues"{% endif %}
 depends: [
   "ocaml" {>= "4.08.0"}
   "dune"

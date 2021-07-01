@@ -28,9 +28,6 @@
 (config author_name
   (input (prompt "Name of the author:")))
 
-(config github_username
-  (input (prompt "GitHub username:")))
-
 (config include_docker
   (confirm (prompt "Include Docker setup?"))
   (default false))

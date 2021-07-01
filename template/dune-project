@@ -2,16 +2,18 @@
 
 (name {{ project_slug }})
 
-(documentation "https://{{ github_username }}.github.io/{{ project_slug }}/")
+{% if github_username %}(documentation "https://{{ github_username }}.github.io/{{ project_slug }}/"){% endif %}
 
-(source
- (github {{ github_username }}/{{ project_slug }}))
+{% if github_username %}(source
+ (github {{ github_username }}/{{ project_slug }})){% endif %}
 
 (license MIT)
 
-(authors "{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}")
+(authors
+  "{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}")
 
-(maintainers "{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}")
+(maintainers
+  "{{ author_name }}{% if author_email %} <{{ author_email }}>{% endif %}")
 
 (generate_opam_files true)
 
