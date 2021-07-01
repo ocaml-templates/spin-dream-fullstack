@@ -1,12 +1,29 @@
-# opam local switch
-_opam/
-
-# Dune build environment
+# Dune generated files
 _build/
+*.install
+
+# Merlin configuring file for Vim and Emacs
+.merlin
+
+# Local OPAM switch
+_opam/
 
 # Git
 .git/
 .gitignore
+
+{% if include_tailwind == "true" %}
+# Normal npm stuff
+npm-debug.log
+yarn-error.log
+node_modules/
+.cache/
+dist/
+build/
+
+{% endif -%}
+# IDE related
+.vscode*
 
 # Development
 Dockerfile
