@@ -1,0 +1,17 @@
+let render ~title inner =
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <link rel="icon" type="image/png" href="/assets/favicon.ico" />
+      <link rel="stylesheet" href="/assets/main.css" />
+      
+      
+      <title><%s title %></title>
+    </head>
+
+    <body class="antialiased">
+      <%s! inner %>
+    </body>
+  </html>

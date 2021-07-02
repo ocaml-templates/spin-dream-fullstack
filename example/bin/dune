@@ -1,0 +1,5 @@
+(executable
+ (name server)
+ (modules server)
+ (libraries demo_web))
+
