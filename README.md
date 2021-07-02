@@ -1,15 +1,15 @@
 <h1 align="center">spin-dream</h1>
 
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ocaml-templates/spin-dream/main/demo.png" alt="Demo" />
+  <a href="https://github.com/tmattio/spin">Spin</a> generator for <a href="https://github.com/aantron/dream">Dream</a> applications.
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/tmattio/spin">Spin</a> generator for <a href="https://github.com/aantron/dream">Dream</a> applications.
+  <img src="https://raw.githubusercontent.com/ocaml-templates/spin-dream/main/demo.png" alt="Demo" />
 </p>
+
 
 ```bash
 opam spin new https://github.com/tmattio/spin-dream.git
@@ -33,7 +33,18 @@ You can see a generated project with the minimal setup in the [`example/`](examp
 
 ## Requirements
 
-- TailwindCSS requires NodeJS 12.13 or higher.
+- TailwindCSS requires NodeJS 12.13 or higher. If your system uses a previous version of NodeJS, we recommend using [`nvm`](https://github.com/nvm-sh/nvm) to install a newer version.
+  ```bash
+  # Install NVM
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+  # Reload bash
+  source ~/.bashrc
+  # Install an NPM version, 14 is the latest LTS
+  nvm install 14
+  # Use the version in your current prompt
+  nvm use 14
+  ```
+
 
 ## To Do
 
