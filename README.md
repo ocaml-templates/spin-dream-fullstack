@@ -15,7 +15,8 @@
 opam spin new https://github.com/tmattio/spin-dream.git
 ```
 
-You can see a generated project with the minimal setup in the [`example/`](example/) directory.
+You can see a generated project with the minimal setup and usage instructions
+in the [`example/`](example/) directory.
 
 ## What's included
 
@@ -25,7 +26,7 @@ You can see a generated project with the minimal setup in the [`example/`](examp
   - `lib/<project>_web` contains the API definition
   - `lib/<project>_app` contains an (optional) JavaScript application sent to clients
 - [X] Welcome page with a portal to Dream's ecosystem
-- [X] Unit tests suite with [Alcotest](https://github.com/mirage/alcotest)
+- [X] Unit test suite with [Alcotest](https://github.com/mirage/alcotest)
 - [X] CLI to configure server settings at runtime with [`dream-cli`](https://github.com/tmattio/dream-cli)
 - [X] (optional) [Docker](https://www.docker.com/) configuration files ready for deployment.
 - [X] (optional) [TailwindCSS](https://tailwindcss.com/) integrated with Dune
