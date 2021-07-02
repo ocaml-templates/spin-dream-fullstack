@@ -25,15 +25,16 @@ You can see a generated project with the minimal setup in the [`example/`](examp
   - `lib/<project>_web` contains the API definition
   - `lib/<project>_app` contains an (optional) JavaScript application sent to clients
 - [X] Welcome page with a portal to Dream's ecosystem
-- [X] [TailwindCSS](https://tailwindcss.com/) integrated with Dune
-- [X] [Inter fonts](https://rsms.me/inter/) configured with TailwindCSS
 - [X] Unit tests suite with [Alcotest](https://github.com/mirage/alcotest)
-- [X] [Turbolink](https://github.com/turbolinks/turbolinks) setup
 - [X] CLI to configure server settings at runtime with [`dream-cli`](https://github.com/tmattio/dream-cli)
+- [X] (optional) [Docker](https://www.docker.com/) configuration files ready for deployment.
+- [X] (optional) [TailwindCSS](https://tailwindcss.com/) integrated with Dune
+- [X] (optional) [Inter fonts](https://rsms.me/inter/) configured with TailwindCSS
+- [X] (optional) [Turbolink](https://github.com/turbolinks/turbolinks) setup
 
 ## Requirements
 
-- TailwindCSS requires NodeJS 12.13 or higher. If your system uses a previous version of NodeJS, we recommend using [`nvm`](https://github.com/nvm-sh/nvm) to install a newer version.
+- The optional TailwindCSS setup requires NodeJS 12.13 or higher. If your system uses a previous version of NodeJS, we recommend using [`nvm`](https://github.com/nvm-sh/nvm) to install a newer version.
   ```bash
   # Install NVM
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
