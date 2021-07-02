@@ -4,11 +4,11 @@
 
 A short, but powerful statement about your project
 
-## Setup your development environment
+## Set up your development environment
 
-You need Opam, you can install it by following [Opam's documentation](https://opam.ocaml.org/doc/Install.html).
+You need opam. You can install it by following [opam's documentation](https://opam.ocaml.org/doc/Install.html).
 
-With Opam installed, you can install the dependencies in a new local switch with:
+With opam installed, you can install the dependencies in a new local switch with:
 
 ```bash
 make switch
@@ -42,9 +42,9 @@ make watch
 
 This will restart the server on filesystem changes and reload the pages automatically.
 
-### Running Tests
+### Running tests
 
-You can run the unit tests suites with:
+You can run the unit test suite with:
 
 ```bash
 make test
@@ -64,7 +64,7 @@ To serve the documentation:
 make servedoc
 ```
 
-### Repository Structure
+### Repository structure
 
 The following snippet describes Demo's repository structure.
 
@@ -74,23 +74,23 @@ The following snippet describes Demo's repository structure.
 |   Source for demo's binary. This links to the library defined in `lib/`.
 │
 ├── lib/
-|   Source for Demo's library. Contains Demo's core functionnalities.
+|   Source for Demo's library. Contains Demo's core functionalities.
 │
 ├── test/
 |   Unit tests and integration tests for Demo.
 │
 ├── dune-project
 |   Dune file used to mark the root of the project and define project-wide parameters.
-|   For the documentation of the syntax, see https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
+|   For the documentation of the syntax, see https://dune.readthedocs.io/en/stable/dune-files.html#dune-project.
 │
 ├── LICENSE
 │
 ├── Makefile
-|   Make file containing common development command.
+|   `Makefile` containing common development commands.
 │
 ├── README.md
 │
 └── demo.opam
-    Opam package definition.
+    opam package definition.
     To know more about creating and publishing opam packages, see https://opam.ocaml.org/doc/Packaging.html.
 ```
