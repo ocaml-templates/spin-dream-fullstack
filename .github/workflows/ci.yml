@@ -19,11 +19,11 @@ jobs:
       fail-fast: false
       matrix:
         spin-tailwind:
-          - tailwind
-          - no-tailwind
+          - "tailwind"
+          - "no-tailwind"
         spin-embedded-js:
-          - embedded-js
-          - no-embedded-js
+          - "embedded-js"
+          - "no-embedded-js"
 
     env:
       SPIN_PROJECT_NAME: Demo
