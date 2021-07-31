@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Prime the caches every Monday
+    - cron: 0 1 * * MON
+
+jobs:
+  build:
+    name: Generate project
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        spin-tailwind:
+          - true
+          - false
+        spin-embedded-js:
+          - true
+          - false
+
+    env:
+      SPIN_PROJECT_NAME: Demo
+      SPIN_CREATE_SWITCH: false
+      SPIN_INCLUDE_TAILWIND: ${{ matrix.spin-tailwind }}
+      SPIN_INCLUDE_EMBEDDED_JS: ${{ matrix.spin-embedded-js }}
+      SPIN_AUTHOR_NAME: Jonh Doe
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use OCaml ocaml-base-compiler.4.11.2
+        uses: ocaml/setup-ocaml@master
+        with:
+          ocaml-compiler: ocaml-base-compiler.4.11.2
+          dune-cache: true
+
+      - run: opam install spin
+
+      - run: spin new . _generated -d
+
+      - run: make test
+        working-directory: _generated
