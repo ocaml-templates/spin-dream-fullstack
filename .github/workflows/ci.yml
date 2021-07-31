@@ -24,9 +24,9 @@ jobs:
     env:
       SPIN_PROJECT_NAME: Demo
       SPIN_CREATE_SWITCH: false
-      SPIN_INCLUDE_TAILWIND: ${{ matrix.tailwind == 'tailwind' && true }}
-      SPIN_INCLUDE_EMBEDDED_JS: ${{ matrix.embedded-js == 'embedded-js' && true }}
       SPIN_AUTHOR_NAME: Jonh Doe
+      SPIN_INCLUDE_TAILWIND: ${{ matrix.tailwind == 'tailwind' }}
+      SPIN_INCLUDE_EMBEDDED_JS: ${{ matrix.embedded-js == 'embedded-js' }}
 
     steps:
       - name: Checkout code
@@ -36,7 +36,6 @@ jobs:
         uses: ocaml/setup-ocaml@master
         with:
           ocaml-compiler: ocaml-base-compiler.4.11.2
-          dune-cache: true
 
       - run: opam install spin
 
