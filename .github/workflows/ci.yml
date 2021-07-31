@@ -19,17 +19,17 @@ jobs:
       fail-fast: false
       matrix:
         spin-tailwind:
-          - true
-          - false
+          - tailwind
+          - no-tailwind
         spin-embedded-js:
-          - true
-          - false
+          - embedded-js
+          - no-embedded-js
 
     env:
       SPIN_PROJECT_NAME: Demo
       SPIN_CREATE_SWITCH: false
-      SPIN_INCLUDE_TAILWIND: ${{ matrix.spin-tailwind }}
-      SPIN_INCLUDE_EMBEDDED_JS: ${{ matrix.spin-embedded-js }}
+      SPIN_INCLUDE_TAILWIND: ${{ matrix.spin-tailwind == "tailwind" && "true" }}
+      SPIN_INCLUDE_EMBEDDED_JS: ${{ matrix.spin-embedded-js == "embedded-js" && "true" }}
       SPIN_AUTHOR_NAME: Jonh Doe
 
     steps:
@@ -44,7 +44,7 @@ jobs:
 
       - run: opam install spin
 
-      - run: spin new . _generated -d
+      - run: opam exec -- spin new . _generated -d -vv
 
       - run: make test
         working-directory: _generated
